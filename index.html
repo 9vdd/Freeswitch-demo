@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>sip js freeswitch demo</title>
+</head>
+
+<body>
+
+
+<form id="config-form" action="">
+    <label>SIP URI       <input type="text" name="uri" value="1000@192.168.0.106"/></label><br>
+    <label>Username <input type="text" name="authorizationUser" value="1000"/></label><br>
+    <label>Password      <input type="password" name="password" /></label><br>
+    <label>ws(5066)/wss(7443)     <input type="text" name="wsServers" value="wss://192.168.0.106:7443"/></label><br>
+    <input type="submit" name="configSubmit" value="Create UA" />
+</form>
+
+<!-- UA Control Form -->
+<div id="ua">
+    <div id="ua-status">Disconnected</div>
+    <form id="new-session-form" action="">
+        <label>SIP URI      <input type="text" id="ua-uri" value="1001@192.168.0.106"/></label>
+        <input type="submit" id="ua-invite-submit" value="Invite" />
+    </form>
+</div>
+
+<ul id="session-list"></ul>
+
+<!-- Templates to clone Sessions and Messages -->
+<ul id="templates">
+    <li id="session-template" class="template session">
+        <h2><strong class="display-name"></strong> <span class="uri"></span></h2>
+        <button class="green">Green</button>
+        <button class="red">Red</button>
+        <video id="videoframe" autoplay>Video Disabled or Unavailable</video>
+    </li>
+</ul>
+
+<script src="sip-0.7.7.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
